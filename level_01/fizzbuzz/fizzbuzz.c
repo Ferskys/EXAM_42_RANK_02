@@ -5,7 +5,8 @@ int main() {
 
     // Loop de 1 a 100
     while(i <= 100) {
-        if(i % 3 == 0 && i % 5 == 0) { // If the number is divisible by 3 and 5
+        if(i % 3 == 0 && i % 5 == 0) 
+        { // If the number is divisible by 3 and 5
             printf("fizzbuzz\n"); // Print "fizzbuzz"
         }
         else if(i % 3 == 0) { // If the number is divisible by 3
