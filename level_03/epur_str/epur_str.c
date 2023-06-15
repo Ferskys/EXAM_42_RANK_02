@@ -26,7 +26,7 @@ int main(int argc, char const **argv)
 			else
 			{
 				if (flg)
-					write(1, " (oi)", 5);
+					write(1, " ", 1);
 				flg = 0;
 				write(1, &*argv[1], 1);
 			}
