@@ -1,29 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   lcm.c                                              :+:      :+:    :+:   */
+/*   sort_int_tab.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ferskys <ferskys@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/16 18:21:14 by ferskys           #+#    #+#             */
-/*   Updated: 2023/06/16 18:21:21 by ferskys          ###   ########.fr       */
+/*   Created: 2023/06/16 21:52:49 by ferskys           #+#    #+#             */
+/*   Updated: 2023/06/16 21:54:13 by ferskys          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-unsigned int lcm(unsigned int a, unsigned int b)
+void	sort_int_tab(int *tab, unsigned int size)
 {
-	unsigned int n;	
+	unsigned int	i = 0;
+	int	temp;
 
-	if (a == 0 || b == 0)
-		return (0);
-	if (a > b)
-		n = a;
-	else
-		n = b;
-	while (1)
+	while (i < (size - 1))
 	{
-		if (n % a == 0 && n % b == 0)
-			return (n);
-		++n;
+		if (tab[i] > tab[i + 1])
+		{
+			temp = tab[i];
+			tab[i] = tab[i+ 1];
+			tab[i + 1] = temp;
+			i = 0;
+		}
+		else
+			i++;
 	}
 }

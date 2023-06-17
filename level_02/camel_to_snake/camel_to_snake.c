@@ -1,23 +1,22 @@
 #include <unistd.h>
 #include <stdio.h>
 
-int main(int argc, char **argv) {
-    int i = 0;
-
-    if (argc == 2) // Check if there is exactly one argument passed to the program
+int main(int argc, char **argv) 
+{
+    if (argc == 2)
     {
-        while (*argv[1]) // Iterate over each character of the argument
+        while (*argv[1])
         {
-            if (*argv[1] >= 'A' && *argv[1] <= 'Z') // Check if the character is an uppercase letter
+            if (*argv[1] >= 'A' && *argv[1] <= 'Z')
             {
-                *argv[1] = *argv[1] + 32; // Convert the uppercase letter to lowercase by adding 32 to its ASCII value
-                write(1, "_", 1); // Write an underscore character to the standard output
+                *argv[1] = *argv[1] + 32;
+                write(1, "_", 1);
             }
-            write(1, &*argv[1], 1); // Write the character to the standard output
-            argv[1]++; // Move to the next character
+            write(1, argv[1], 1);
+            argv[1]++;
         }
     }
-    printf("\n"); // Print a new line
+    printf("\n");
 }
 /*
 #include <unistd.h>

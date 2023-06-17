@@ -1,26 +1,40 @@
 #include <unistd.h>
 
+int isSpaceOrTab(char str)
+{
+    return (str == 9 || str == 32);
+}
+
 int main(int argc, char **argv)
 {
     int i = 0;
+    int lastWordIndex = -1;
+    int length = 0;
 
-    // Check if there is a command-line argument
     if (argc == 2)
     {
-        // Ignore initial spaces and tabs
-        while (argv[1][i] == 32 || argv[1][i] == 9)
+        while (isSpaceOrTab(argv[1][i]))
             i++;
-
-        // Print characters until a space, tab, or end of string is encountered
-        while ((argv[1][i] != 32 && argv[1][i] != 9) && argv[1][i])
+        while (argv[1][i])
         {
-            write(1, &argv[1][i], 1);
+            if (isSpaceOrTab(argv[1][i]))
+            {
+                lastWordIndex = i + 1;
+            }
             i++;
         }
+        if (lastWordIndex != -1)
+        {
+            i = lastWordIndex;
+            while (argv[1][i])
+            {
+                write(1, &argv[1][i], 1);
+                i++;
+            }
+        }
     }
-
-    // Print a new line
     write(1, "\n", 1);
+    return (0);
 }
 
 /*

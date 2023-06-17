@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fsuomins <fsuomins@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: ferskys <ferskys@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/14 22:21:41 by fsuomins          #+#    #+#             */
-/*   Updated: 2023/06/15 00:17:33 by fsuomins         ###   ########.fr       */
+/*   Updated: 2023/06/15 00:58:29 by ferskys          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ char **ft_split(char *str)
 
         if (words[i] == NULL)
         {
-            // Libera memória alocada anteriormente em caso de falha
+            // Libera memória alocada anteriormente em caso de falha 
             int j = 0;
             while (j < i)
             {

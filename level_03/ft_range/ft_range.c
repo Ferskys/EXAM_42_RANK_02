@@ -3,16 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_range.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fsuomins <fsuomins@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: ferskys <ferskys@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/14 20:21:00 by fsuomins          #+#    #+#             */
-/*   Updated: 2023/06/14 21:54:17 by fsuomins         ###   ########.fr       */
+/*   Updated: 2023/06/16 18:03:22 by ferskys          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
-#include <stdlib.h>
-
 #include <stdlib.h>
 
 int     *ft_range(int start, int end)

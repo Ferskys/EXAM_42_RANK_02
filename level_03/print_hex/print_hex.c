@@ -1,29 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   lcm.c                                              :+:      :+:    :+:   */
+/*   print_hex.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ferskys <ferskys@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/16 18:21:14 by ferskys           #+#    #+#             */
-/*   Updated: 2023/06/16 18:21:21 by ferskys          ###   ########.fr       */
+/*   Created: 2023/06/16 18:29:31 by ferskys           #+#    #+#             */
+/*   Updated: 2023/06/16 18:33:37 by ferskys          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-unsigned int lcm(unsigned int a, unsigned int b)
-{
-	unsigned int n;	
+#include <stdio.h>
+#include <stdlib.h>
 
-	if (a == 0 || b == 0)
-		return (0);
-	if (a > b)
-		n = a;
-	else
-		n = b;
-	while (1)
-	{
-		if (n % a == 0 && n % b == 0)
-			return (n);
-		++n;
-	}
+void print_hex(int num)
+{
+    if (num > 0)
+    {
+        print_hex(num / 16);
+
+        int rest = num % 16;
+
+        if (rest < 10)
+            printf("%c", rest + '0');
+        else
+            printf("%c", rest - 10 + 'a');
+    }
+}
+
+int main(int argc, char **argv)
+{
+    if (argc == 2)
+    {
+        print_hex(atoi(argv[1]));
+    }
+    printf("\n");
+    return 0;
 }

@@ -1,29 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   lcm.c                                              :+:      :+:    :+:   */
+/*   pgcd.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ferskys <ferskys@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/16 18:21:14 by ferskys           #+#    #+#             */
-/*   Updated: 2023/06/16 18:21:21 by ferskys          ###   ########.fr       */
+/*   Created: 2023/06/16 18:23:45 by ferskys           #+#    #+#             */
+/*   Updated: 2023/06/16 18:24:49 by ferskys          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-unsigned int lcm(unsigned int a, unsigned int b)
-{
-	unsigned int n;	
+#include <stdio.h>
+#include <stdlib.h>
 
-	if (a == 0 || b == 0)
-		return (0);
-	if (a > b)
-		n = a;
-	else
-		n = b;
-	while (1)
-	{
-		if (n % a == 0 && n % b == 0)
-			return (n);
-		++n;
-	}
+int main(int argc, char **argv)
+{
+    if (argc != 3) 
+    {
+        printf("\n");
+        return 0;
+    }
+
+    int a = atoi(argv[1]);
+    int b = atoi(argv[2]);
+
+    while (b != 0) 
+    {
+        int temp = a % b;
+        a = b;
+        b = temp;
+    }
+    
+    printf("%d\n", a);
+    return 0;
 }

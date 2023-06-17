@@ -1,29 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   lcm.c                                              :+:      :+:    :+:   */
+/*   tab_mult.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ferskys <ferskys@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/16 18:21:14 by ferskys           #+#    #+#             */
-/*   Updated: 2023/06/16 18:21:21 by ferskys          ###   ########.fr       */
+/*   Created: 2023/06/16 20:23:29 by ferskys           #+#    #+#             */
+/*   Updated: 2023/06/16 20:27:46 by ferskys          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-unsigned int lcm(unsigned int a, unsigned int b)
-{
-	unsigned int n;	
 
-	if (a == 0 || b == 0)
-		return (0);
-	if (a > b)
-		n = a;
-	else
-		n = b;
-	while (1)
-	{
-		if (n % a == 0 && n % b == 0)
-			return (n);
-		++n;
-	}
+#include <stdlib.h>
+#include <stdio.h>
+
+void tab_mult(int num, int count)
+{
+    if (count > 9)
+        return;
+    
+    printf("%d x %d = %d\n", count, num, count * num);
+    
+    tab_mult(num, count + 1);
+}
+
+int main(int argc, char **argv)
+{
+    if (argc == 2) 
+    {     
+        int num = atoi(argv[1]);
+        
+        tab_mult(num, 1);
+    }
+    printf("\n");
+    return 0;
 }
