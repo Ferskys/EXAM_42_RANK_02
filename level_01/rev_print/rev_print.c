@@ -1,21 +1,16 @@
 #include <unistd.h>
 
-void print_string(const char* str)
-{
-    int i = 0;
-
-    while (str[i])
-        i += 1;
-    
-    while (i)
-        write(1, &str[--i], 1);
-}
-
 int main(int argc, char *argv[]) 
 {
     if (argc == 2) // Check if there are two arguments passed to the program
     {
-        print_string(argv[1]); // Call the function to print the provided string
+        int i = 0;
+
+        while (argv[1][i])
+            i++;
+        
+        while (i >= 0)
+            write(1, &argv[1][--i], 1); // Call the function to print the provided string
     }
     write(1, "\n", 1); // Write a new line character
     return (0);
