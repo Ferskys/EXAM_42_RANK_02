@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ferskys <ferskys@student.42.fr>            +#+  +:+       +#+        */
+/*   By: fsuomins <fsuomins@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/14 22:21:41 by fsuomins          #+#    #+#             */
-/*   Updated: 2023/06/15 00:58:29 by ferskys          ###   ########.fr       */
+/*   Updated: 2023/06/19 23:53:48 by fsuomins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,20 +24,17 @@ char **ft_split(char *str)
     char *word_end = NULL;
 
     // Encontra o número de palavras na string
-    while (*p) 
-    {
-        if (isspace(*p))
-        {
+
+        while (isspace(*p))
             p++;
-            continue;
+        
+        while (*p)
+        {
+            if (isspace(*p) && !is_space(*p + 1))
+                n_words++;
+            p++;
         }
 
-        word_start = p;
-        
-        while (*p && !isspace(*p)) 
-            p++;
-
-        n_words++;
     }
 
     // Aloca memória para o array de palavras
@@ -51,11 +48,8 @@ char **ft_split(char *str)
 
     while (*p)
     {
-        if (isspace(*p))
-        {
+        while (isspace(*p))
             p++;
-            continue;
-            }
 
         word_start = p;
 
