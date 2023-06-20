@@ -1,15 +1,13 @@
-#include <stdio.h>
+#include <unistd.h>
 
 void print_bits(unsigned char octet)
 {
-    int i = 128; // 10000000 in binary, equivalent to 2^7
+	int	i = 8;
+	unsigned char 	bit;
 
-    while (i > 0)
-    {
-        if (octet & i)
-            printf("1");
-        else
-            printf("0");
-        i >>= 1; // Shift i one bit to the right
-    }
+	while (i--)
+	{
+		bit = (octet >> i & 1) + '0';
+		write(1, &bit, 1);
+	}
 }
