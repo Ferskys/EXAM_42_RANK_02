@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_range.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ferskys <ferskys@student.42.fr>            +#+  +:+       +#+        */
+/*   By: fsuomins <fsuomins@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/14 20:21:00 by fsuomins          #+#    #+#             */
-/*   Updated: 2023/06/16 18:03:22 by ferskys          ###   ########.fr       */
+/*   Updated: 2023/06/19 23:27:10 by fsuomins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,20 +18,48 @@ int     *ft_range(int start, int end)
     int len = abs(end - start) + 1; 
     int *array = (int *)malloc(len * sizeof(int));
   
-    if (array == NULL)
-        return NULL;
-
     int i = 0;
     
-    while (i < len)
+    if (array)
     {
-        array[i] = start;
-
-        if (start <= end)
+        while (i < len)
+        {
+            array[i] = start;
             start++;
-        else
-            start--;
-        i++;
+            i++;
+        }
     }
     return (array);
 }
+
+
+// void imprimirArray(int *array, int tamanho) {
+//     printf("Array: [");
+//     for (int i = 0; i < tamanho; i++) {
+//         printf("%d", array[i]);
+//         if (i != tamanho - 1) {
+//             printf(", ");
+//         }
+//     }
+//     printf("]\n");  
+// }
+
+// int main() {
+//     int inicio = -4;
+//     int fim = 7;
+
+//     int *resultado = ft_range(inicio, fim);
+//     if (resultado == NULL) {
+//         printf("Erro na alocação de memória.\n");
+//         return 1;
+//     }
+
+//     int tamanho = abs(fim - inicio) + 1;
+
+//     printf("Array criado com ft_rrange(%d, %d):\n", inicio, fim);
+//     imprimirArray(resultado, tamanho);
+
+//     free(resultado);
+
+//     return 0;
+// }

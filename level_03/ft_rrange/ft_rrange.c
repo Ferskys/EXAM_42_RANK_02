@@ -28,16 +28,13 @@
 
 int *ft_rrange(int start, int end)
 {
-    int size = (end - start) + 1;
-    if (start > end)
-		return (ft_rrange(end, start));
-
-    int *array = (int *)malloc(size *sizeof(int));
+    int len = abs(end - start) + 1;
+    int *array = (int *)malloc(len *sizeof(int));
  
     int i = 0;
     if (array)
     {
-        while(i < size)
+        while(i < len)
         {
             array[i] = end;
             end--;
@@ -47,33 +44,33 @@ int *ft_rrange(int start, int end)
     return (array);
 }
 
-// void imprimirArray(int *array, int tamanho) {
-//     printf("Array: [");
-//     for (int i = 0; i < tamanho; i++) {
-//         printf("%d", array[i]);
-//         if (i != tamanho - 1) {
-//             printf(", ");
-//         }
-//     }
-//     printf("]\n");  
-// }
+void imprimirArray(int *array, int tamanho) {
+    printf("Array: [");
+    for (int i = 0; i < tamanho; i++) {
+        printf("%d", array[i]);
+        if (i != tamanho - 1) {
+            printf(", ");
+        }
+    }
+    printf("]\n");  
+}
 
-// int main() {
-//     int inicio = -4;
-//     int fim = 7;
+int main() {
+    int inicio = -4;
+    int fim = 7;
 
-//     int *resultado = ft_rrange(inicio, fim);
-//     if (resultado == NULL) {
-//         printf("Erro na alocação de memória.\n");
-//         return 1;
-//     }
+    int *resultado = ft_rrange(inicio, fim);
+    if (resultado == NULL) {
+        printf("Erro na alocação de memória.\n");
+        return 1;
+    }
 
-//     int tamanho = abs(fim - inicio) + 1;
+    int tamanho = abs(fim - inicio) + 1;
 
-//     printf("Array criado com ft_rrange(%d, %d):\n", inicio, fim);
-//     imprimirArray(resultado, tamanho);
+    printf("Array criado com ft_rrange(%d, %d):\n", inicio, fim);
+    imprimirArray(resultado, tamanho);
 
-//     free(resultado);
+    free(resultado);
 
-//     return 0;
-// }
+    return 0;
+}
