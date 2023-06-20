@@ -1,37 +1,31 @@
 #include <stdio.h>
+#include <string.h>
+#include <ctype.h>
+#define LOWER "abcdefghijklmnoprstuwxyz"
+#define UPPER "ABCDEFGHIJKLMNOPQRSTUWXYZ"
 
 int main(int argc, char **argv)
 {
-    if (argc == 2) // Check if there are two arguments passed to the program
-    {
-        while (*argv[1]) // Loop while the current character of argv[1] is not the null character ('\0')
+    if (argc == 2)
+	{
+		int i;
+		int index = 0;
+        while (*argv[1])
         {
-            int is_repeat_alpha = 0;
-            
-            if (*argv[1] >= 'a' && *argv[1] <= 'z') // If the character is a lowercase letter
-            {
-                is_repeat_alpha = *argv[1] - 'a' + 1; // Define the number of repetitions based on the position of the letter in the alphabet
-                while (is_repeat_alpha > 0) // Loop to print the character repeatedly
-                {
-                    printf("%c", *argv[1]); // Print the character
-                    is_repeat_alpha--; // Decrement the repetition counter
-                }
-            }
-            else if (*argv[1] >= 'A' && *argv[1] <= 'Z') // If the character is an uppercase letter
-            {
-                is_repeat_alpha = *argv[1] - 'A' + 1; // Define the number of repetitions based on the position of the letter in the alphabet
-                while (is_repeat_alpha > 0) // Loop to print the character repeatedly
-                {
-                    printf("%c", *argv[1]); // Print the character
-                    is_repeat_alpha--; // Decrement the repetition counter
-                }
-            }
-            else // If the character is not a letter
-                printf("%c", *argv[1]); // Print the character normally
-            argv[1]++; // Move to the next character of argv[1]
+			i = 0;
+			if (isupper(*argv[1]))
+				index = strlen(UPPER) - strlen(strchr(UPPER, *argv[1]));
+			else
+				index = strlen(LOWER) - strlen(strchr(LOWER, *argv[1]));
+			while (i <= index)
+			{
+				printf("%c", *argv[1]);
+				i++;
+			}
+            argv[1]++;
         }
     }
-    printf("\n"); // Print a new line
+    printf("\n");
     return (0);
 }
 
