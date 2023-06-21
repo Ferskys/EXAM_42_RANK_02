@@ -29,7 +29,7 @@ question Any of the 12 Functions/Programs Below:
 
 Question 2 is from Level 2
 
-question Any of the 20 Functions/Programs Below:
+Any of the 20 Functions/Programs Below:
 
       - alpha_mirror
       - camel_to_snake
@@ -54,7 +54,7 @@ question Any of the 20 Functions/Programs Below:
 
 Question 3 is from Level 3
 
-question Any of the 15 Functions/Programs Below:
+Any of the 15 Functions/Programs Below:
 
       - add_prime_sum
       - epur_str
@@ -74,7 +74,7 @@ question Any of the 15 Functions/Programs Below:
 
 Question 4 is from Level 4
 
-question Any of the 10 Functions/Programs Below:
+Any of the 10 Functions/Programs Below:
 
       - flood_fill
       - fprime
@@ -89,7 +89,7 @@ question Any of the 10 Functions/Programs Below:
 
 Stats
 
-swimmer Total Pool of 57 Functions/Programs.
+Total Pool of 57 Functions/Programs.
 
 Exam Login Details
 
