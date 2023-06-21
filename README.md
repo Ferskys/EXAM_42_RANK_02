@@ -93,35 +93,31 @@ swimmer Total Pool of 57 Functions/Programs.
 
 Exam Login Details
 
-one Login With The Following:
-
     login -> exam
     password -> exam
 
-    two In ITerm:
-
     Type examshell in terminal
 
-    three Your 42 Intra Account:
+    Your 42 Intra Account:
 
-    login -> your 42 intra username (eg. prossi)
+    login -> your 42 intra username
     pasword -> your password
 
-    four Your 42 Intra Photo:
+    Your 42 Intra Photo:
 
     Allow photo check
 
-    five Access Rendu:
+    Access Rendu:
 
     Type 'y' or 'yes'
 
-six In the Exam Shell, You Have Only The Following 3 Commands:
+In the Exam Shell, You Have Only The Following 3 Commands:
 
     - status - check the time and other things
     - grademe - checking pushed exercise (moulinet)
     - finish - closing examshell and finish exam
 
-seven Open a new iTerm or VSCode:
+Open a new iTerm or VSCode:
 
     - You can find your exam subject in the directory subject
     - Then you can see directory Rendu. It is your repository.
