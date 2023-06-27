@@ -1,16 +1,12 @@
-Exam Details
+Exam Details:
+- This exam has 4 questions in total. A random question is picked from each level below.
+- If you fail the exam, when you retake the exam next time, you will restart at Level 1 again with a different set of questions.
 
-    This exam has 4 questions in total. A random question is picked from each level below.
-    If you fail the exam, when you retake the exam next time, you will restart at Level 1 again with a different set of questions.
+Exam Norminette:
+- There is no Norminette in this exam.
 
-
-Exam Norminette
-
-    There is no Norminette in this exam.
-
-Exam Questions
-       
-    Question 1 is from Level 1
+Exam Questions:
+- Question 1 is from Level 1
 
 question Any of the 12 Functions/Programs Below:
 
